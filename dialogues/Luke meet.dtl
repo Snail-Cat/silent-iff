@@ -1,62 +1,39 @@
 do CharacterDialogueController.move_to("npc_luke", 154.0, 63.0)
 (Você se esbarra em um aluno apressado carregando livros.)
-leave --All--
 join charLuke center
 charLuke: Me desculpe, eu tinha um compromisso urgente.
-leave --All--
-join charNick center
+update charLuke right
+join charNick left
 charNick: Tudo bem, deixa eu te ajudar
-leave --All--
-join charLuke center
 charLuke: Não precisa, eu dou um jeito.
 do CharacterDialogueController.move_to("npc_luke", 156.0, 200.0)
 do CharacterDialogueController.move_to("npc_luke", 156.0, 63.0)
-charLuke: Ué a porta está trancada, mas você acabou de entrar, né?
+charLuke: Ué? A porta está trancada, mas você acabou de entrar, né?
 set {book} = 1.0
-leave --All--
-join charNick center
-charNick: Aquele livro flutuando é seu?
-leave --All--
-join charLuke center
+charNick (Surpresopixel): Aquele livro flutuando é seu?
 charLuke (surpresopixel): A não.
-leave --All--
 join charNick (Surpresopixel) center
 charNick: O que?
-leave --All--
-join charLuke center
 charLuke (Tristepixel): Esqueci dos amuletos.
-leave --All--
-join charNick (Surpresopixel) center
-charNick: Amuletos?
-leave --All--
-join charLuke center
-charLuke: Eu sou um bolsista de pesquisa do instituto, eu tinha que analisar esse livro para um trabalho, todas as pessoas usaram ele sofriam com acidentes misteriosos.
-leave --All--
+join charNick (originalpixel) center
+charNick: Amuletos? Do que você está falando
+charLuke (basepixel): Eu sou um bolsista de pesquisa do instituto, eu tinha que analisar esse livro para um trabalho, todas as pessoas usaram ele sofriam com acidentes misteriosos.
 join charNick center
 charNick (Surpresopixel): Isso é um livro do que? Magia proibida?
-leave --All--
 join charLuke center
-charLuke (Tristepixel): Pior ainda, Termodinâmica.
+charLuke (Tristepixel): Pior ainda... Termodinâmica.
 [sound path="res://sounds/evil laugh.mp3" volume="-20.0"]
 set {lightsoff} = true
-leave --All--
 join charLuke (Tristepixel) center
 
-charLuke: Por que isso sempre acontece comigo. Vamos ter que dar um jeito nisso, achar o livro e colocar os amuletos de novo.
-leave --All--
-join charNick center
+charLuke: Por que isso sempre acontece comigo?
+charLuke: Vamos ter que dar um jeito nisso, achar o livro e colocar os amuletos de novo.
 [action_choices text="Cair dentro"]
 	charNick (Bravopixel): Não foi assim que eu pensei que seria minha primeira vez na biblioteca, mas bora achar esse livro maldito.
 [action_choices text="Amedrontrar" choice_type="1"]
 	charNick (Tristepixel): É meu primeiro dia, não era pra ser mais deboa e tal?
-leave --All--
-join charLuke center
 
-charLuke: Desculpe, inclusive que curso você faz? Alias meu nome é Luke.
-leave --All--
-join charNick center
-charNick: Meu nome é Nick. Eu faço ########.
-leave --All--
-join charLuke center
+charLuke (basepixel): Desculpe, inclusive que curso você faz? Aliás, meu nome é Luke.
+charNick (originalpixel): Meu nome é Nick. Eu faço ########.
 charLuke: Boa sorte, é um curso e tanto. Vamos lá! Eu acho.
 [end_timeline]

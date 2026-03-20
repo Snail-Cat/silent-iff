@@ -1,54 +1,36 @@
 join charAgnes center
 charAgnes: Olá, aluno calouro. Uma pergunta rápida. Em uma escala de 1 à 10, o quanto você está gostando da experiência do instituto?
-leave --All--
-join charNick center
+join charAgnes right
+join charNick left
 [action_choices text="Não Responder"]
 	charNick: Não tenho informações o bastante, para confirmar minha pergunta, desculpe.
-	leave --All--
-	join charAgnes center
 	
 	charAgnes: Claro, sempre é bom captar mais informações antes de formar sua hipótese, infelizmente você ainda tem que coletar elas com seu corpo físico.
 [action_choices text="Responder" choice_type="1"]
-	charNick: Sei lá, 0, acho que fui roubado, como vou responder isso?
-	leave --All--
-	join charAgnes center
+	charNick: Sei lá... 0? Acho que acabaram de me roubar, como vou responder isso?
 	charAgnes (AgnesBravapixel): Você precisa ser mais atento,olhar minuciosamente cada detalhe.
 	charAgnes: Você pode não ver pelas câmeras de seguranças, mas seus olhos parecem bem funcionais.
-leave --All--
-join charNick center
 
 charNick: Não entendi. Você não é humana?
-leave --All--
-join charAgnes center
 charAgnes: Você só está vendo um holograma. Eu conectei minha consciência com os servidores do Instituto a 4 anos atrás, só tem uma parte ruim...
 
-charAgnes (Agnesfelizpixel): É que eu não consegui replicar o experimento de novo.
+charAgnes (AgnesTristepixel): É que eu não consegui replicar o experimento de novo.
 charAgnes (Agnesfelizpixel): Já as partes boas são muitas\: eu não perco mais tempo em tarefas frívolas como andar, comer ou dormir.
 charAgnes (Agnesfelizpixel): Assim posso focar 100% em ajudar vocês alunos a alcançar o seu potencial máximo.
-leave --All--
-join charNick center
 [action_choices text="Se empolgar"]
 	
 	charNick (Felizpixel): Eu tenho bastante potencial, pode acreditar.
 [action_choices text="Mudar de assunto" choice_type="1"]
-	charNick: Parece interessante moça computador, mas é meu primeiro dia e eu tenho que achar uma pessoa e minha turma.
-leave --All--
-join charAgnes center
+	charNick: Parece interessante, moça computador, mas é meu primeiro dia e eu tenho que achar uma pessoa e minha turma.
 
-charAgnes (Agnessurpresapixel): Você já imaginou? Não ter que comer ou dormir? Eu perdia 1 terço de minha limitadas horas de vida dormindo! 1 TERÇO.
+charAgnes (Agnessurpresapixel): Você já imaginou? Não ter que comer ou dormir? Eu perdia um terço de minha limitadas horas de vida dormindo! UM TERÇO.
 charAgnes (AgnesBravapixel): Se passássemos menos tempo nos sonhos e mais na realidade resolvendo problemas estaríamos em um mundo melhor.
-leave --All--
-join charNick center
 [action_choices text="Concordar"]
-	charNick: Tem razão, perder 30 anos dormindo não parece certo desse ponto de vista.
-	leave --All--
-	join charAgnes center
+	charNick (Tristepixel): Tem razão, perder 30 anos dormindo não parece certo desse ponto de vista.
 	
 	charAgnes: Você está completamente correto. Espero que você participe de algum projeto meu. Preciso de mais alunos assim.
 [action_choices text="Discordar" choice_type="1"]
-	charNick: Sempre fui fã de soneca depois do almoço.
-	leave --All--
-	join charAgnes center
+	charNick: Sempre fui fã de uma soneca depois do almoço.
 	charAgnes: Se quiser ter sucesso melhor esquecer cochilos e diminuir o tempo de almoço.
 
 charAgnes: Se você realmente quiser aproveitar ao máximo o seu tempo aqui, espero que dê o seu melhor em tudo e em use bem cada segundo. Desejo sorte nos estudos.

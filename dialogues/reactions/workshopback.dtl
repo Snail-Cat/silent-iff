@@ -1,4 +1,4 @@
-join charNick center
-do CharacterDialogueController.move_to("Player", 255.0, 430.0)
+join charNick left
 charNick: Não sei se o Vini passou por aqui, mas tenho que dar mais uma olhada.
+do CharacterDialogueController.move_to("Player", 255.0, 430.0)
 [end_timeline]

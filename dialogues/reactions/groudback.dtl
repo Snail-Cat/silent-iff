@@ -1,4 +1,4 @@
-join charNick center
+join charNick left
 charNick: Vamos, lá Nick. Não tem por que voltar agora.
 do CharacterDialogueController.move_to("Player", 0.0, 378.0)
 [end_timeline]

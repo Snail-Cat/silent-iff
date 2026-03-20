@@ -1,36 +1,20 @@
-join charNick center
+join charNick left
 charNick: Oi, seu guarda.
-leave --All--
-join charGuarda center
+join charGuarda right
 charGuarda: Opa, tudo certo?
-leave --All--
-join charNick center
 charNick: Não consigo entrar.
-leave --All--
-join charGuarda center
 charGuarda: Precisa passar a carteirinha.
-leave --All--
-join charNick center
 charNick: É minha primeira aula, não fiz minha carteirinha ainda.
-leave --All--
-join charGuarda center
 charGuarda: Deixa eu ver o protocolo aqui, espere um pouco.
 
 (Um aluno passa pela frente do jogador)
-leave --All--
-join charVini center
+join charVini right
+update charGuarda rightmost
 
 charVini: Ei carinha. Tudo certo ai?
-leave --All--
-join charNick center
 charNick: Não muito, aparentemente preciso de uma carteira para entrar na universidade
-leave --All--
-join charVini center
 charVini: É, você consegue elas na secretaria.
-leave --All--
-join charNick center
 charNick: Que fica dentro da faculdade?
-leave --All--
-join charVini center
-charVini: É… Deixa que eu passo pra você vai.
+charVini: É...
+charVini: Deixa que eu passo pra você vai.
 [end_timeline]

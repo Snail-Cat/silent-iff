@@ -1,20 +1,14 @@
 [background arg="res://assets/backgrounds/backgroundblack.png" fade="0.0"]
 join charNick center
 charNick: Desculpa.
-leave --All--
-join chargeneric center
+update charNick left
+join chargeneric right
 chargeneric: Não se desculpe, já resolvemos isso. É o primeiro dia no instituto, você deveria pensar em outras coisas.
-leave --All--
-join charNick center
 charNick: Não é o primeiro dia.
-leave --All--
-join chargeneric center
-chargeneric: Mesmo que as aulas já tenham começado faz uma semana. É o seu primeiro dia. É isso que importa. Olhe estamos chegando.
-leave --All--
-join charNick center
+chargeneric: Mesmo que as aulas já tenham começado faz uma semana. É o seu primeiro dia. É isso que importa. Olhe, estamos chegando.
+chargeneric: É isso que importa.
+chargeneric: Olhe, estamos chegando.
 charNick: …
 charNick: Obrigado, eu vou voltar de ônibus. Não precisa se preocupar.
-leave --All--
-join chargeneric center
 chargeneric: Nada, quero te buscar pelo menos hoje. Se cuida.
 [end_timeline]

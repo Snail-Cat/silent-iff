@@ -1,4 +1,4 @@
-join charNick center
+join charNick left
 charNick: Mesmo que Vini não esteja aqui, quero ver como é a biblioteca.
 do CharacterDialogueController.move_to("Player", 128.0, 268.0)
 [end_timeline]

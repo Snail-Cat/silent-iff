@@ -1,54 +1,33 @@
-leave --All--
 join charManoel center
 charManoel: Opa, tudo certo. Você é um rosto novo aqui. Você parece bem cansado, não? Deve ser exaustivo ficar andando pra lá e pra cá.
-leave --All--
-join charNick center
+update charManoel right
+join charNick left
 [action_choices text="Discordar"]
 	charNick: Não posso descansar agora, tenho que achar meu celular, e a pessoa que pegou ele.
 [action_choices text="Concordar" choice_type="1"]
 	charNick: Tem razão, acho que ficar correndo não vai resolver nada.
-leave --All--
-join charManoel center
 
 charManoel: Descansar é bom demais, eu nunca fico cansado por exemplo. Estou sempre calmo e pleno.
-leave --All--
-join charNick center
 charNick: Está tudo bem com o senhor?
-leave --All--
-join charManoel center
 
 charManoel: Há! sempre esqueço de explicar, eu… já morri.
-leave --All--
-join charNick center
 
 charNick: Tipo morto por dentro? ou morto, mortinho da silva?
-leave --All--
-join charManoel center
 
 charManoel: Morto da Silva! Desde que eu era vivo, sempre fui meio aéreo. Eu nem percebi que um dia vim dar aula e bem… já estava morto! Demorou mais um mês até os alunos notarem.
-leave --All--
-join charNick center
 [action_choices text="Críticar"]
 	charNick (Bravopixel): Eles não deviam se interessar muito pela sua aula.
 [action_choices text="Bajular" choice_type="1"]
 	charNick (Felizpixel): Você parece bem normal para mim.
-leave --All--
-join charManoel center
 
 charManoel: Os alunos até falam que eu lembro um personagem de livro, sempre esqueço…
-leave --All--
-join charNick center
 [action_choices text="Lembrar"]
 	charNick: Brás Cubas, do Machado de Assis.
-	leave --All--
-	join charManoel center
 	
 	charManoel: Sim, sim, não que importe algo, relaxe, não era um teste ou coisa parecida.
 [action_choices text="Esquecer" choice_type="1"]
 	charNick: Um, não me lembro, deve ser algum do Fernando Pessoa ou algo do tipo.
-	leave --All--
-	join charManoel center
-	charManoel: Tem razão, não tem importância agora, tenho todo um pós vida para lembrar disso.
+	charManoel: Tem razão, não tem importância agora, tenho todo um pós-vida para lembrar disso.
 
 charManoel: Enquanto você estiver no instituto, não precisa levar as coisas tão a sério, como alguém que já morreu, sei que a vida passa rápido. Aproveite.
 do CharacterDialogueController.delete("npc_manoel")

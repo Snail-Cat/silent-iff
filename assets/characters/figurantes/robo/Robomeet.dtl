@@ -1,14 +1,10 @@
 set {alarm} = true
 Perigo, Alerta 73, Alerta 73.
 do CharacterDialogueController.move_to("Player", 250.0, 250.0)
-leave --All--
-join charNick (Surpresopixel) center
+join charNick (Surpresopixel) left
 charNick: Sério? Eu nem toquei em nada.
-leave --All--
-join charRobo center
+join charRobo right
 charRobo: Otário encontrado. Combate iminente. Prepare-se ou se arrependa.
-leave --All--
-join charNick (Surpresopixel) center
 charNick (Surpresopixel): Ei, não quero combate nenhum, você sabe onde fica a saída desse lugar?
 charNick: Acho que vou ter que correr.
 set {roboon} = true

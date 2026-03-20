@@ -1,38 +1,20 @@
-leave --All--
-join charVini center
+join charVini right
 charVini: Complicado isso, você não fez sua carteira no primeiro dia?
-leave --All--
-join charNick center
+join charNick left
 charNick: Hoje é o meu "primeiro dia", esqueci de ver o email de aprovação da vaga. Acabei só vindo hoje.
-leave --All--
-join charVini center
 charVini: Que curso você faz?
-leave --All--
-join charNick center
 charNick: Eu faço ▮▮▮▮▮▮▮▮▮▮▮.
-leave --All--
-join charVini center
-charVini: Legal eu faço também, to no quinto período. Relaxa, eles não passam nada de muito importante nos primeiros dias. Já estou há algum tempo no curso e já vi a turma nova.
-leave --All--
-join charNick center
+charVini (felizpixel): Legal eu faço também, to no quinto período. Relaxa, eles não passam nada de muito importante nos primeiros dias. Já estou há algum tempo no curso e já vi a turma nova.
 [action_choices text="Isso é ruim"]
 	charNick (Bravopixel): É meio enrolado, eles podiam já começar com as aulas de uma vez.
 [action_choices text="Isso é bom" choice_type="1"]
 	charNick (Felizpixel): Que bom, dá pra ir conhecendo o pessoal, sem muita pressa.
-leave --All--
-join charVini center
 
-charVini (felizpixel): Ok, a aula ainda vai demorar pra começar, posso ir te mostrando o Instituto. Ah é mesmo, meu nome é Vini, esqueci de falar.
-leave --All--
-join charNick center
-charNick: O meu é Nick.
-leave --All--
-join charVini center
+charVini (basepixel): Ok, a aula ainda vai demorar pra começar, posso ir te mostrando o Instituto. Ah é mesmo, meu nome é Vini, esqueci de falar.
+charNick (originalpixel): O meu é Nick.
 charVini (felizpixel): É um nome bonito.
-leave --All--
-join charVini center
 
-charVini: Normalmente o instituto está bem mais cheio, mas hoje é uma sexta-feira, tem poucas aulas.
+charVini (basepixel): Normalmente o instituto está bem mais cheio, mas hoje é uma sexta-feira, tem poucas aulas.
 do CharacterDialogueController.move_to("npc_vini", 0.0, 0.0)
 do CharacterDialogueController.move_to("Player", 0.0, 32.0)
 
@@ -44,61 +26,38 @@ charVini: Por último os auditórios das apresentações e palestras.
 charVini: Por algum motivo os auditórios e Ginásios estão fechados hoje.
 
 charVini: Ali no meio estão as escadas e elevadores, as escadas são meio esquisitas, parece que você fica nelas pra sempre. Os elevadores são bem rápidos, então é melhor ir por eles.
-leave --All--
-join charNick center
 
 charNick (Surpresopixel): Entendi, nossa é bastante coisa.
-leave --All--
-join charVini center
 
 charVini: O instituto é um pouco complexo no início. E no final também. É melhor você pesquisar quando ficar com dúvida de algo. Provavelmente você não tem a internet da universidade ainda.
-leave --All--
-join charNick center
 
-charNick: Ela é boa?
-leave --All--
-join charVini center
+charNick (originalpixel): Ela é boa?
 
 charVini (felizpixel): Estranhamente boa, é até engraçado falar.
-leave --All--
-join charNick center
 [action_choices text="Elogiar"]
 	charNick: Surpreendente, normalmente internet de instituição é horrível.
 [action_choices text="Agradecer" choice_type="1"]
 	charNick: Isso é ótimo, odeio ficar sem internet.
-leave --All--
-join charVini center
 
-charVini: Me empresta seu celular, é meio chatinho conectar de primeira.
+charVini (basepixel): Me empresta seu celular, é meio chatinho conectar de primeira.
 
 charNick: Ok.
-leave --All--
-join charVini center
 
 charVini: E o que você gosta de fazer no seu tempo livre?
-leave --All--
-join charNick center
 
 charNick: Uh? Eu…
 [action_choices text="Estudar"]
 	charNick (originalpixel): Prefiro ficar estudando. Me sinto muito parado se eu não estiver lendo algo.
-	leave --All--
-	join charVini center
 	charVini: Sério? É meio raro achar alguém que gosta muito de estudar só por estudar mesmo. Mas é importante, se preparar para o futuro e tal.
 [action_choices text="Ouvir música" choice_type="1"]
 	charNick (Felizpixel): Gosto de ficar ouvindo música, me sinto bem calmo quando ouço meu álbum favorito.
-	leave --All--
-	join charVini (felizpixel) center
 	
-	charVini: Também ouço muita música, mas não tenho nenhum artista favorito, gosto de ficar trocando o tempo todo.
+	charVini (felizpixel): Também ouço muita música, mas não tenho nenhum artista favorito, gosto de ficar trocando o tempo todo.
 charVini: Tá vou conectando aqui e… Ah, espera um pouco, meu celular tá tocando, alô. Oquê? Tudo bem… Olha agora eu estou…
-leave 
 
 (Vini se afasta um pouco, para falar no celular).
 [background arg="res://assets/backgrounds/backgroundblack.png" fade="1.0"]
 De repente, uma multidão se aproxima.
-leave --All--
-join charNick center
 
 charNick: Ei Vini, meu celular.
 Vini não te ouve, você perde a visão dele.
