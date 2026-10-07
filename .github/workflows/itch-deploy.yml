@@ -1,0 +1,29 @@
+name: Deploy to Itch.io
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v5
+
+      - name: godot export
+        id: export
+        uses: firebelley/godot-export@v7.0.0
+        with:
+          godot_executable_download_url: https://github.com/godotengine/godot/releases/download/4.7.2-stable/Godot_v4.7.2-stable_linux.x86_64.zip
+          godot_export_templates_download_url: https://github.com/godotengine/godot/releases/download/4.7.2-stable/Godot_v4.7.2-stable_export_templates.tpz
+          relative_project_path: ./
+
+      - name: setup butler
+        uses: remarkablegames/setup-butler@v2
+
+      - name: itch deploy web
+        run: butler push ${{ steps.export.outputs.build_directory }}/Web ${{ vars.ITCH_USER }}/${{ vars.ITCH_GAME }}:web
+        env:
+          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
