@@ -20,11 +20,16 @@ const GROUP_KEY := 'game_character'
 @export var walk_speed: int = 150
 var facing_direction: Direction
 var movement_state: Movement
-@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+var animated_sprite: AnimatedSprite2D
 
 
 func _init():
 	add_to_group(GROUP_KEY)
+
+
+func _ready():
+	animated_sprite = get_node_or_null("AnimatedSprite2D")
+	print(get_node_or_null("AnimatedSprite2D"))
 
 
 func set_facing_direction_vector(direction: Vector2) -> void:
@@ -51,6 +56,9 @@ func set_movement_state(movement: Movement):
 
 
 func update_player_animation() -> void:
+	if !animated_sprite:
+		return
+	
 	if (facing_direction == Direction.RIGHT):
 		if (movement_state == Movement.IDLE):
 			animated_sprite.play("idle_right")

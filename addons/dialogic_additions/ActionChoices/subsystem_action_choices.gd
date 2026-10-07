@@ -43,7 +43,7 @@ func get_current_choices_info() -> Dictionary[ActionChoices.ActionChoiceType, Ac
 
 		var choice_event: DialogicActionChoicesEvent = event
 		var text := choice_event.get_property_translated('text')
-		text = dialogic.Text.parse_text(text, true, true, false, true, false, false)
+		text = dialogic.Text.parse_text(text, 1)
 		var type = choice_event.choice_type
 
 		choices[type] = ActionChoiceInfo.new(choice_index, text, type, choice_event.extra_data)

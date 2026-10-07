@@ -10,6 +10,7 @@ const INTERACTABLE_GROUP_KEY := "interactable"
 
 
 func _ready():
+	super()
 	add_to_group(INTERACTABLE_GROUP_KEY)
 
 
