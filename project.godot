@@ -8,11 +8,15 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="Silent Iff"
 run/main_scene="uid://d0f4bqlt1718b"
-config/features=PackedStringArray("4.4", "GL Compatibility")
+config/features=PackedStringArray("4.7", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/show_image=false
 config/icon="res://icon.svg"
@@ -20,7 +24,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 GlobalState="*res://src/other/global_state.gd"
-Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+Dialogic="*uid://ds2q0uclmolvu"
 CharacterDialogueController="*res://src/characters/character_dialogue_controller.gd"
 LevelManager="*res://entities/level/level_manager.tscn"
 
@@ -117,10 +121,13 @@ text/input_action="dialogic_default_action"
 audio/max_channels=4.0
 animations/join_default="Instant In"
 animations/leave_default="Fade Out"
+layout/style_directory={
+"": "res://dialogues/styles/MainStyle/main_style.tres",
+"main_style": "res://dialogues/styles/MainStyle/main_style.tres"
+}
 
 [display]
 
-window/size/mode=3
 window/stretch/mode="canvas_items"
 
 [editor_plugins]
@@ -148,6 +155,7 @@ interactable=""
 [gui]
 
 theme/custom_font="uid://cg3c00u0rcih2"
+theme/defaults/default_clear_color=Color(0, 0, 0, 1)
 
 [input]
 

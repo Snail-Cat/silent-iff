@@ -1,10 +1,13 @@
 extends Control
 
-@export var top_button : Button
+@export var top_button: Button
+@export var main_menu_scene_path: String
+
+@onready var animation_player := $AnimationPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$AnimationPlayer.play("RESET")	
+	animation_player.play("RESET")
 	hide()
 
 
@@ -15,8 +18,9 @@ func _process(delta: float) -> void:
 
 
 func _retornar() -> void:
+	animation_player.play_backwards("blur")
+	await animation_player.animation_finished
 	get_tree().paused = false
-	$AnimationPlayer.play_backwards("blur")
 	var _dialogic_node = Dialogic.Styles.get_layout_node()
 	if _dialogic_node:
 		_dialogic_node.show()
@@ -26,7 +30,7 @@ func _retornar() -> void:
 func _pause() -> void:
 	show()
 	get_tree().paused = true
-	$AnimationPlayer.play("blur")
+	animation_player.play("blur")
 	var _dialogic_node = Dialogic.Styles.get_layout_node()
 	if _dialogic_node:
 		_dialogic_node.hide()
@@ -39,3 +43,10 @@ func _on_retornar_pressed() -> void:
 
 func _on_sair_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_main_menu_pressed() -> void:
+	animation_player.play_backwards("blur")
+	await animation_player.animation_finished
+	get_tree().paused = false
+	get_tree().change_scene_to_file(main_menu_scene_path)

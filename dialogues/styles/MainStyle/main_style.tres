@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="DialogicStyle" load_steps=20 format=3 uid="uid://c7folwubcc50c"]
+[gd_resource type="Resource" script_class="DialogicStyle" format=3 uid="uid://c7folwubcc50c"]
 
 [ext_resource type="Script" uid="uid://bwg6yncmh2cml" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="1_31uc0"]
 [ext_resource type="PackedScene" uid="uid://c1k5m0w3r40xf" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_FullBackground/full_background_layer.tscn" id="2_fevbp"]
 [ext_resource type="PackedScene" uid="uid://den8dagwxnell" path="res://dialogues/styles/MainStyle/5Portraits/custom_5_portraits.tscn" id="3_31uc0"]
 [ext_resource type="PackedScene" uid="uid://cn674foxwedqu" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn" id="4_e0aid"]
-[ext_resource type="PackedScene" uid="uid://d2vpmo7qf8jml" path="res://addons/dialogic_additions/ActionChoices/VisualNovelTextbox/custom_visual_novel_textbox.tscn" id="5_fevbp"]
+[ext_resource type="PackedScene" uid="uid://d2vpmo7qf8jml" path="res://dialogues/styles/VisualNovelTextbox/custom_visual_novel_textbox.tscn" id="5_fevbp"]
 [ext_resource type="PackedScene" uid="uid://dsbwnp5hegnu3" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Glossary/glossary_popup_layer.tscn" id="6_5cei1"]
 [ext_resource type="PackedScene" uid="uid://dhk6j6eb6e3q" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/vn_choice_layer.tscn" id="7_lrmi5"]
 [ext_resource type="PackedScene" uid="uid://cvgf4c6gg0tsy" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_TextInput/text_input_layer.tscn" id="8_oarie"]
@@ -13,12 +13,10 @@
 
 [sub_resource type="Resource" id="Resource_7ntyj"]
 script = ExtResource("1_31uc0")
-overrides = {}
 
 [sub_resource type="Resource" id="Resource_o2c3l"]
 script = ExtResource("1_31uc0")
 scene = ExtResource("2_fevbp")
-overrides = {}
 
 [sub_resource type="Resource" id="Resource_dwajp"]
 script = ExtResource("1_31uc0")
@@ -31,7 +29,6 @@ overrides = {
 [sub_resource type="Resource" id="Resource_iblcj"]
 script = ExtResource("1_31uc0")
 scene = ExtResource("4_e0aid")
-overrides = {}
 
 [sub_resource type="Resource" id="Resource_faabp"]
 script = ExtResource("1_31uc0")
@@ -45,10 +42,10 @@ overrides = {
 "name_label_box_modulate": "Color(0, 0, 0, 0)",
 "name_label_box_use_global_color": "false",
 "name_label_custom_font_size": "20.0",
-"name_label_font": "\"res://PressStart2P-Regular.ttf\"",
+"name_label_font": "\"res://assets/fonts/PressStart2P-Regular.ttf\"",
 "name_label_use_global_font": "false",
 "name_label_use_global_font_size": "false",
-"normal_font": "\"res://PressStart2P-Regular.ttf\"",
+"normal_font": "\"res://assets/fonts/PressStart2P-Regular.ttf\"",
 "text_use_global_font": "false",
 "text_use_global_size": "false"
 }
@@ -56,22 +53,18 @@ overrides = {
 [sub_resource type="Resource" id="Resource_1d8s1"]
 script = ExtResource("1_31uc0")
 scene = ExtResource("6_5cei1")
-overrides = {}
 
 [sub_resource type="Resource" id="Resource_xg644"]
 script = ExtResource("1_31uc0")
 scene = ExtResource("7_lrmi5")
-overrides = {}
 
 [sub_resource type="Resource" id="Resource_6ty01"]
 script = ExtResource("1_31uc0")
 scene = ExtResource("8_oarie")
-overrides = {}
 
 [sub_resource type="Resource" id="Resource_nm21i"]
 script = ExtResource("1_31uc0")
 scene = ExtResource("9_rnh3i")
-overrides = {}
 
 [resource]
 script = ExtResource("10_mpasu")
@@ -88,6 +81,4 @@ layer_info = {
 "16": SubResource("Resource_6ty01"),
 "17": SubResource("Resource_nm21i")
 }
-base_overrides = {}
-layers = Array[ExtResource("1_31uc0")]([])
-metadata/_latest_layer = "11"
+metadata/_latest_layer = "13"

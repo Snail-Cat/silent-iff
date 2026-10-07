@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://bfrkkkhkkidsn"]
+[gd_scene load_steps=14 format=4 uid="uid://bfrkkkhkkidsn"]
 
 [ext_resource type="TileSet" uid="uid://1ewuogbvvi3n" path="res://assets/tilesets/workshop.tres" id="1_irfxh"]
 [ext_resource type="PackedScene" uid="uid://b2mrq06jsbhrw" path="res://assets/characters/Nick/PlayerNick.tscn" id="2_xyn6c"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bw2a3j2o7bip0" path="res://entities/level/level_boundaries.tscn" id="4_y2dup"]
 [ext_resource type="PackedScene" uid="uid://ci0a8bo1k1spe" path="res://entities/ui/in_game_ui.tscn" id="6_0ufkt"]
 [ext_resource type="PackedScene" uid="uid://dd2li0oorxeyc" path="res://entities/level/dialogue_dontgo.tscn" id="7_y2dup"]
+[ext_resource type="PackedScene" uid="uid://blthtsyf0bsjw" path="res://ui_screens/demo_end_card.tscn" id="9_tgays"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tgays"]
 size = Vector2(6.2766, 20)
@@ -119,3 +120,7 @@ position = Vector2(-4.76837e-07, 0)
 shape = SubResource("RectangleShape2D_wllnq")
 
 [node name="inGameUI" parent="." instance=ExtResource("6_0ufkt")]
+
+[node name="DemoEndCard" parent="." instance=ExtResource("9_tgays")]
+
+[connection signal="interaction_finished" from="walls/roberta" to="DemoEndCard" method="_on_cutscene_finished"]

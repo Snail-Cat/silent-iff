@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://bmgavl50w0qa1"]
+[gd_scene load_steps=16 format=4 uid="uid://bmgavl50w0qa1"]
 
 [ext_resource type="TileSet" uid="uid://5chuiopib5dj" path="res://assets/tilesets/library.tres" id="1_itnu8"]
 [ext_resource type="PackedScene" uid="uid://b2mrq06jsbhrw" path="res://assets/characters/Nick/PlayerNick.tscn" id="2_exm45"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://xr2tfldabl17" path="res://src/characters/npc/interactable_npc.gd" id="9_3wdkb"]
 [ext_resource type="PackedScene" uid="uid://d16xqaq0glvcj" path="res://maps/college/lightslibrary.tscn" id="9_qlvls"]
 [ext_resource type="Script" uid="uid://c6wd40mswi00p" path="res://maps/college/lightslibrary.gd" id="10_bq7gp"]
+[ext_resource type="PackedScene" uid="uid://blthtsyf0bsjw" path="res://ui_screens/demo_end_card.tscn" id="13_onx6v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_onx6v"]
 size = Vector2(6.2766, 20)
@@ -154,3 +155,7 @@ position = Vector2(-4.76837e-07, 0)
 shape = SubResource("RectangleShape2D_3wdkb")
 
 [node name="inGameUI" parent="." instance=ExtResource("8_61nrj")]
+
+[node name="DemoEndCard" parent="." instance=ExtResource("13_onx6v")]
+
+[connection signal="cutscene_finished" from="CustceneStart" to="DemoEndCard" method="_on_cutscene_finished"]

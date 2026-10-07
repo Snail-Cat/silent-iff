@@ -1,19 +1,8 @@
-[gd_scene load_steps=20 format=3 uid="uid://iqcgm345kduy"]
+[gd_scene load_steps=18 format=3 uid="uid://iqcgm345kduy"]
 
 [ext_resource type="Script" uid="uid://vnrclr4vdr2h" path="res://src/ui/pause_menu.gd" id="1_3gwjo"]
-[ext_resource type="Shader" uid="uid://cpy3tne3k6l3h" path="res://src/ui/pause_menu.gdshader" id="1_3th8r"]
 [ext_resource type="FontFile" uid="uid://pn5xdjipjrqa" path="res://assets/placeholder/UI/Fonts/PressStart2P-Regular.ttf" id="1_prgr1"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_3gwjo"]
-shader = ExtResource("1_3th8r")
-shader_parameter/lod = 0.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_prgr1"]
-bg_color = Color(0, 0, 0, 0.392157)
-corner_radius_top_left = 25
-corner_radius_top_right = 25
-corner_radius_bottom_right = 25
-corner_radius_bottom_left = 25
+[ext_resource type="Texture2D" uid="uid://ltdlbk7jdtdp" path="res://assets/ui/pause_menu/pause_panel.png" id="3_x64g5"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3th8r"]
 
@@ -36,6 +25,33 @@ corner_radius_bottom_left = 25
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ct46q"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ilhcb"]
+
+[sub_resource type="Animation" id="Animation_886t7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_x64g5"]
 resource_name = "blur"
@@ -65,33 +81,6 @@ tracks/1/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_886t7"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:material:shader_parameter/lod")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Panel:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_x8bpx"]
 _data = {
 &"RESET": SubResource("Animation_886t7"),
@@ -108,17 +97,18 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3gwjo")
 top_button = NodePath("Panel/VBoxContainer/Retornar")
+main_menu_scene_path = "res://ui_screens/menu_inicial.tscn"
 
 [node name="ColorRect" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_3gwjo")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0, 0, 0, 0.501961)
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="TextureRect" parent="."]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 8
@@ -126,25 +116,28 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -165.5
-offset_top = -86.0
-offset_right = 165.5
-offset_bottom = 86.0
+offset_left = -530.0
+offset_top = -120.0
+offset_right = 530.0
+offset_bottom = 120.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_prgr1")
+texture = ExtResource("3_x64g5")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 layout_mode = 1
-anchors_preset = 14
+anchors_preset = 8
+anchor_left = 0.5
 anchor_top = 0.5
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 0.5
-offset_top = -43.5
-offset_bottom = 43.5
+offset_left = -403.0
+offset_top = -86.0
+offset_right = 403.0
+offset_bottom = 86.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 25
+theme_override_constants/separation = 0
 
 [node name="Retornar" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
@@ -153,7 +146,6 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0.501961, 0.501961, 0.501961, 1)
 theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("1_prgr1")
 theme_override_font_sizes/font_size = 31
 theme_override_styles/focus = SubResource("StyleBoxEmpty_3th8r")
@@ -167,7 +159,30 @@ theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_idlng")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_nnj4w")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_ct46q")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_ilhcb")
-text = "Retornar"
+text = "Continuar
+"
+
+[node name="Menu Principal" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.501961, 0.501961, 0.501961, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_prgr1")
+theme_override_font_sizes/font_size = 31
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3th8r")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_3gwjo")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_x64g5")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_886t7")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_x8bpx")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_d30gd")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_pculo")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_idlng")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_nnj4w")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_ct46q")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ilhcb")
+text = "Retornar ao menu principal"
 
 [node name="Sair" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
@@ -176,7 +191,6 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0.501961, 0.501961, 0.501961, 1)
 theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("1_prgr1")
 theme_override_font_sizes/font_size = 31
 theme_override_styles/focus = SubResource("StyleBoxEmpty_3th8r")
@@ -196,6 +210,8 @@ text = "Sair"
 libraries = {
 &"": SubResource("AnimationLibrary_x8bpx")
 }
+autoplay = "RESET"
 
 [connection signal="pressed" from="Panel/VBoxContainer/Retornar" to="." method="_on_retornar_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Menu Principal" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/Sair" to="." method="_on_sair_pressed"]
