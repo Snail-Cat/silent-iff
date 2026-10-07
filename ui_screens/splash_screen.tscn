@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://d0f4bqlt1718b"]
+[gd_scene format=3 uid="uid://d0f4bqlt1718b"]
 
 [ext_resource type="Texture2D" uid="uid://c6xne1ox4qno1" path="res://assets/placeholder/UI/Images/Splash Screen.png" id="1_mgb2d"]
 [ext_resource type="Script" uid="uid://p3odkqh6fqrd" path="res://src/ui/splash_screen.gd" id="1_pq1tg"]
@@ -57,7 +57,7 @@ _data = {
 &"fade_out": SubResource("Animation_pq1tg")
 }
 
-[node name="SplashScreen" type="Control"]
+[node name="SplashScreen" type="Control" unique_id=1507535305]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -67,7 +67,7 @@ grow_vertical = 2
 script = ExtResource("1_pq1tg")
 path_to_menu = "res://ui_screens/menu_inicial.tscn"
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=462133135]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -78,7 +78,7 @@ texture = ExtResource("1_mgb2d")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2048876430]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -87,10 +87,8 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_brpkx")
-}
-autoplay = "fade_in"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1252675602]
+libraries/ = SubResource("AnimationLibrary_brpkx")
+autoplay = &"fade_in"
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

@@ -7,6 +7,7 @@ var is_running: bool
 const PUSH_FORCE: int = 300
 
 func _ready() -> void:
+	super()
 	# Define a posição que o player ira iniciar o level
 	var playerPosition: Vector2 = LevelManager.get_player_spawn_position()
 	if playerPosition:
